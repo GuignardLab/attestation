@@ -6,9 +6,16 @@ Automatically send your attestation letters.
 
 ## Installation
 
-To install clone this repository and then run:
+To install, clone this repository:
 
 ```shell
+git pull https://github.com/GuignardLab/attestation.git
+```
+
+and then run:
+
+```shell
+cd attestation
 pip install -e .
 ```
 
@@ -19,7 +26,13 @@ You will want to modify `PI_name`, `role`, `address`, and you might want to info
 
 Setting `signature_path` or `logo_path` to the empty string will ignore them.
 
-Once you have modified these variables you can ran the code as follow
+Once you have modified these variables you can ran the script as follow:
+
+```shell
+send-attestation -name Name Surname
+```
+
+with `Name` and `Surname` being the ones of the student
 
 ## Contributing
 
