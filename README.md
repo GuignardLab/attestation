@@ -19,6 +19,8 @@ cd attestation
 pip install -e .
 ```
 
+**Warning: You have to have install `pdflatex` as a command line**
+
 ## Usage
 
 After installation you need to modify the first lines of the file `src/attestation/_template.py`.
@@ -32,7 +34,9 @@ Once you have modified these variables you can ran the script as follow:
 send-attestation -name Name Surname
 ```
 
-with `Name` and `Surname` being the ones of the student
+with `Name` and `Surname` being the ones of the student you want to send the attestation for.
+
+By default, the email is sent to the 
 
 ## Contributing
 
