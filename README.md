@@ -19,7 +19,10 @@ cd attestation
 pip install -e .
 ```
 
-**Warning: You have to have install `pdflatex` as a command line**
+**Warning 1: You have to have install `pdflatex` as a command line**
+
+**Warning 2: You have to use `-e` to be able to easily modify `src/attestation/_template.py` (see below).**
+**If you don't want to use `-e` you'll have to `pip install .` each time you change the template file**
 
 ## Usage
 
@@ -43,7 +46,7 @@ You can change that with the following command line:
 send-attestation --name student_name student_surname --recipients LC1@institute.com LC2@institute.com
 ```
 
-Few other parameters can be changed, running 
+Few other parameters can be changed, running the following:
 
 ```shell
 send-attestation --help
