@@ -1,5 +1,5 @@
 ## Your name
-PI_name = "FirstName LastName"
+PI_name = "Léo Guignard"
 
 ## Your role
 role = "Chef d'équipe CenTuri au LIS"
@@ -28,6 +28,14 @@ signature_path = (
 # logo_path = ""
 logo_path = "/Users/leo.guignard/Production/Students/Intern-presence/logo_LIS_color.png"
 
+## Body of the email that will be sent along with the pdf
+email_body = ("""Bonjour!
+Veuillez trouver attaché l'attestation de présence de {name:s}.
+
+Bonne journée,
+""" + PI_name + """
+
+""")
 
 template = (
     """

@@ -8,7 +8,7 @@ from email.mime.application import MIMEApplication
 import subprocess
 import tempfile
 import shutil
-from ._template import template
+from ._template import template, email_body
 import datetime
 import calendar
 
@@ -86,10 +86,7 @@ def send_attestation(
     if send:
         sender = f"{smtp_username}@{smtp_server.removeprefix('smtp.')}"
         subject = f"Attestation présence {name}"
-        body = (
-            "Bonjour!\nVeuillez trouver attaché l'attestation"
-            f" de présence de {name}.\nBonne journée,\nLéo Guignard\n\n"
-        )
+        body = email_body.format(name=name)
 
         msg = MIMEMultipart()
         msg["From"] = sender
@@ -205,7 +202,6 @@ def script_run():
     keep = args.keep_pdf
     pdf_file = args.pdf_file
     send = not args.no_send
-    print(send, keep, pdf_file)
 
     # Get the current year and month
     if args.last_day:
