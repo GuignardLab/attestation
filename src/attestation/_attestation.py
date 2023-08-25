@@ -121,7 +121,7 @@ def send_attestation(
             smtp_connection.quit()
         except Exception as e:
             print(e)
-    if (keep or not send):
+    if keep or not send:
         if not pdf_file:
             pdf_file = f"attestation {name}.pdf"
         created = f"attestation {name}.pdf"
