@@ -1,27 +1,25 @@
 # attestation
 
-[![License MIT](https://img.shields.io/pypi/l/attestation.svg?color=green)](https://github.com/GuignardLab/attestation/raw/main/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/attestation.svg?color=green)](https://pypi.org/project/attestation)
-[![Python Version](https://img.shields.io/pypi/pyversions/attestation.svg?color=green)](https://python.org)
-[![tests](https://github.com/GuignardLab/attestation/workflows/tests/badge.svg)](https://github.com/GuignardLab/attestation/actions)
-[![codecov](https://codecov.io/gh/GuignardLab/attestation/branch/main/graph/badge.svg)](https://codecov.io/gh/GuignardLab/attestation)
-
-Automatically send your attestation letters
+Automatically send your attestation letters.
 
 ----------------------------------
 
 ## Installation
 
-You can install `attestation` via [pip]:
+To install clone this repository and then run:
 
-    pip install attestation
+```shell
+pip install -e .
+```
 
+## Usage
 
+After installation you need to modify the first lines of the file `src/attestation/_template.py`.
+You will want to modify `PI_name`, `role`, `address`, and you might want to inform `signature_path` and `logo_path` as **absolute** paths.
 
-To install latest development version :
+Setting `signature_path` or `logo_path` to the empty string will ignore them.
 
-    pip install git+https://github.com/GuignardLab/attestation.git
-
+Once you have modified these variables you can ran the code as follow
 
 ## Contributing
 
