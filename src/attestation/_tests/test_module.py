@@ -1,4 +1,4 @@
-from attestation import attestation
+from attestation import send_attestation, script_run
 
 
 def test_module():
