@@ -1,5 +1,5 @@
 ## Your name
-PI_name = "Name Surname"
+PI_name = "FirstName LastName"
 
 ## Your role
 role = "Chef d'équipe CenTuri au LIS"
@@ -19,7 +19,9 @@ address = """
 ## Path to a signature image.
 ## Leave it as an empty string if you don't want to put it
 # signature_path = ""
-signature_path = "/Users/leo.guignard/Production/Students/Intern-presence/signature.pdf"
+signature_path = (
+    "/Users/leo.guignard/Production/Students/Intern-presence/signature.pdf"
+)
 
 ## Path to a logo image.
 ## Leave it as an empty string if you don't want to put it
@@ -37,11 +39,14 @@ template = (
 \\usepackage{{graphicx}}
 
 % Address of sender
-\\address{{ """ + (("""\\includegraphics[scale=.1]{{"""
-    + logo_path
-    + """}}\\\\""") if logo_path else "")
-    + address +
-	"""}}
+\\address{{ """
+    + (
+        ("""\\includegraphics[scale=.1]{{""" + logo_path + """}}\\\\""")
+        if logo_path
+        else ""
+    )
+    + address
+    + """}}
 \\newcommand{{\\studentname}}{{{name:s}}}
 \\newcommand{{\\lastday}}{{{day:d}}}
 \\newcommand{{\\student}}{{\\'etudiant{end:s}}}
@@ -60,17 +65,31 @@ template = (
 
 % Letter body
 A Qui de Droit,\\\\
-Je soussigné """ + PI_name + """, """ + role + """, certifie que
+Je soussigné """
+    + PI_name
+    + """, """
+    + role
+    + """, certifie que
 l'\\student~\\studentname~a travaillé sur son projet en présentiel ou en
 télétravail du 1 \\monthyeardate\\today~ jusqu'au \\lastday~\\monthyeardate\\today~.\\\\
 \\\\
 
 % Closing statement
-\\closing{{Cordialement,\\\\""" + (("""
+\\closing{{Cordialement,\\\\"""
+    + (
+        (
+            """
 \\fromsig{{\\includegraphics[scale=.07]{{"""
-    + signature_path
-    + """}}}} \\\\""") if signature_path else "") + """
-\\fromname{{""" + PI_name + """}}}}
+            + signature_path
+            + """}}}} \\\\"""
+        )
+        if signature_path
+        else ""
+    )
+    + """
+\\fromname{{"""
+    + PI_name
+    + """}}}}
 
 \\end{{letter}}
 \\end{{document}}
