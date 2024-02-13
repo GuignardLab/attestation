@@ -2,31 +2,30 @@
 PI_name = "Léo Guignard"
 
 ## Your role
-role = "Chef d'équipe CenTuri au LIS"
+role = "Chef d'équipe CenTuri \`{{a}} l'IBDM"
 ## It will come out as:
 ## Je soussigné <PI_name>, <role>, certifie que ...
 
 
 ## Keep the line breaks or the LaTeX file will no compile
 address = """
-	LIS UMR 7020 CNRS / AMU / UTLN,\\\\
-	Campus universitaire de Luminy\\\\
-	Bat. TPR2, 5ème étage, Bloc 1\\\\
+	IBDM UMR 7288 CNRS / AMU,\\\\
+	Case 907 - Parc Scientifique de Luminy 13288\\\\
 	163 avenue de Luminy\\\\
-	13288 MARSEILLE cedex 09 	   
+	13288 MARSEILLE cedex 09
 """
 
 ## Path to a signature image.
 ## Leave it as an empty string if you don't want to put it
 # signature_path = ""
 signature_path = (
-    "/Users/leo.guignard/Production/Students/Intern-presence/signature.pdf"
+    "/Users/leo.guignard/Production/Students/Paperwork/Intern-presence/signature.pdf"
 )
 
 ## Path to a logo image.
 ## Leave it as an empty string if you don't want to put it
 # logo_path = ""
-logo_path = "/Users/leo.guignard/Production/Students/Intern-presence/logo_LIS_color.png"
+logo_path = "/Users/leo.guignard/Production/Students/Paperwork/Intern-presence/logo-ibdm.png"
 
 ## Body of the email that will be sent along with the pdf
 email_body = ("""Bonjour!
@@ -49,7 +48,7 @@ template = (
 % Address of sender
 \\address{{ """
     + (
-        ("""\\includegraphics[scale=.1]{{""" + logo_path + """}}\\\\""")
+        ("""\\includegraphics[scale=.5]{{""" + logo_path + """}}\\\\""")
         if logo_path
         else ""
     )
@@ -78,8 +77,8 @@ Je soussigné """
     + """, """
     + role
     + """, certifie que
-l'\\student~\\studentname~a travaillé sur son projet en présentiel ou en
-télétravail du 1 \\monthyeardate\\today~ jusqu'au \\lastday~\\monthyeardate\\today~.\\\\
+l'\\student~\\studentname~a effectu\\'{{e}} du 1 \\monthyeardate\\today~ au \\lastday~\\monthyeardate\\today~ son
+stage au sein de notre \\'{{e}}quipe.\\\\
 \\\\
 
 % Closing statement
