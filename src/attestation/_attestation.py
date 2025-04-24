@@ -131,7 +131,12 @@ def script_run():
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("-n", "--name", nargs="+", default=[], type=str)
     parser.add_argument(
-        "-g", "--genre", choices=["m", "f"], nargs=1, default="m"
+        "-g",
+        "--genre",
+        choices=["m", "f"],
+        nargs=1,
+        default="m",
+        type=str,
     )
     parser.add_argument(
         "-t",
@@ -198,7 +203,10 @@ def script_run():
         name = first_name + " " + last_name
     else:
         name = " ".join(args.name)
-    genre = "" if args.genre == "m" else "e"
+    if isinstance(args.genre, list):
+        genre = "" if args.genre[0] == "m" else "e"
+    else:
+        genre = "" if args.genre == "m" else "e"
     keep = args.keep_pdf
     pdf_file = args.pdf_file
     send = not args.no_send

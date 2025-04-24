@@ -18,9 +18,7 @@ address = """
 ## Path to a signature image.
 ## Leave it as an empty string if you don't want to put it
 # signature_path = ""
-signature_path = (
-    "/Users/leo.guignard/Production/Students/Paperwork/Intern-presence/signature.pdf"
-)
+signature_path = "/Users/leo.guignard/Production/Students/Paperwork/Intern-presence/signature.pdf"
 
 ## Path to a logo image.
 ## Leave it as an empty string if you don't want to put it
@@ -28,13 +26,17 @@ signature_path = (
 logo_path = "/Users/leo.guignard/Production/Students/Paperwork/Intern-presence/logo-ibdm.png"
 
 ## Body of the email that will be sent along with the pdf
-email_body = ("""Bonjour!
+email_body = (
+    """Bonjour!
 Veuillez trouver attaché l'attestation de présence de {name:s}.
 
 Bonne journée,
-""" + PI_name + """
+"""
+    + PI_name
+    + """
 
-""")
+"""
+)
 
 template = (
     """
